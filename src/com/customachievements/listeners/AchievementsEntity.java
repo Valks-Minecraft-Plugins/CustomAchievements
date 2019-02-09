@@ -17,10 +17,24 @@ public class AchievementsEntity implements Listener {
 			if (e.getEntity().getKiller() instanceof Player) {
 				PlayerFiles cm = PlayerFiles.getConfig(e.getEntity().getKiller());
 				FileConfiguration config = cm.getConfig();
-				if (!config.isSet("achievement_3")) {
-					config.set("achievement_3", true);
-					cm.saveConfig();
-					Utils.achievement(e.getEntity().getKiller(), "Monster Slayer");
+				
+				switch (e.getEntity().getType()) {
+				case SLIME:
+					if (!config.isSet("achievement_entity_1")) {
+						config.set("achievement_entity_1", true);
+						cm.saveConfig();
+						Utils.achievement(e.getEntity().getKiller(), "A Sticky Situation");
+					}
+					break;
+				case HUSK:
+					if (!config.isSet("achievement_entity_2")) {
+						config.set("achievement_entity_2", true);
+						cm.saveConfig();
+						Utils.achievement(e.getEntity().getKiller(), "These Guys Are Tough!");
+					}
+					break;
+				default:
+					break;
 				}
 			}
 		}
