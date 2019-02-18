@@ -1,11 +1,10 @@
 package com.customachievements.listeners;
 
-import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
-import com.customachievements.configs.PlayerFiles;
 import com.customachievements.utils.Utils;
 import com.valkutils.modules.BlockModule;
 
@@ -13,61 +12,32 @@ public class AchievementsBlock implements Listener {
 	@EventHandler
 	private void breakBlock(BlockBreakEvent e) {
 		if (BlockModule.isLog(e.getBlock().getType())) {
-			PlayerFiles cm = PlayerFiles.getConfig(e.getPlayer());
-			FileConfiguration config = cm.getConfig();
+			Player p = e.getPlayer();
 			
 			switch (e.getBlock().getType()) {
 			case OAK_LOG:
-				if (!config.getBoolean("achievement_block_1")) {
-					config.set("achievement_block_1", true);
-					Utils.achievement(e.getPlayer(), "Just Getting Started");
-					cm.saveConfig();
-				}
+				Utils.achievement(p, "achievement_block_1", "Just Getting Started");
 				break;
 			case GRASS_BLOCK:
 			case DIRT:
-				if (!config.getBoolean("achievement_block_2")) {
-					config.set("achievement_block_2", true);
-					Utils.achievement(e.getPlayer(), "Scratching the Surface");
-					cm.saveConfig();
-				}
+				Utils.achievement(p, "achievement_block_2", "Scratching the Surface");
 				break;
 			case COAL_ORE:
-				if (!config.getBoolean("achievement_block_3")) {
-					config.set("achievement_block_3", true);
-					Utils.achievement(e.getPlayer(), "What is This?");
-					cm.saveConfig();
-				}
+				Utils.achievement(p, "achievement_block_3", "What is This?");
 				break;
 			case DIAMOND_ORE:
-				if (!config.getBoolean("achievement_block_4")) {
-					config.set("achievement_block_4", true);
-					Utils.achievement(e.getPlayer(), "Just the Beginning");
-					cm.saveConfig();
-				}
+				Utils.achievement(p, "achievement_block_4", "Just the Beginning");
 				break;
 			case EMERALD_ORE:
-				if (!config.getBoolean("achievement_block_5")) {
-					config.set("achievement_block_5", true);
-					Utils.achievement(e.getPlayer(), "A Villagers Delight");
-					cm.saveConfig();
-				}
+				Utils.achievement(p, "achievement_block_5", "A Villagers Damnation");
 				break;
 			case CRAFTING_TABLE:
 			case CHEST:
 			case FURNACE:
-				if (!config.getBoolean("achievement_block_6")) {
-					config.set("achievement_block_6", true);
-					Utils.achievement(e.getPlayer(), "Pack Rat");
-					cm.saveConfig();
-				}
+				Utils.achievement(p, "achievement_block_6", "Pack Rat");
 				break;
 			case GRASS:
-				if (!config.getBoolean("achievement_block_7")) {
-					config.set("achievement_block_7", true);
-					Utils.achievement(e.getPlayer(), "Grass Have Feelings Too!");
-					cm.saveConfig();
-				}
+				Utils.achievement(p, "achievement_block_7", "Grass Have Feelings Too!");
 				break;
 			default:
 				break;
