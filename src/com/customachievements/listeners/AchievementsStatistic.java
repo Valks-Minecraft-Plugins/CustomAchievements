@@ -8,7 +8,7 @@ import org.bukkit.event.player.PlayerStatisticIncrementEvent;
 import org.bukkit.inventory.EntityEquipment;
 
 import com.customachievements.utils.Utils;
-import com.valkutils.modules.PlayerModule;
+import com.valkcore.modules.PlayerModule;
 
 public class AchievementsStatistic implements Listener {
 	@EventHandler
@@ -83,19 +83,19 @@ public class AchievementsStatistic implements Listener {
 			if (PlayerModule.isSword(item)) {
 				switch (value) {
 				case 100:
-					Utils.achievement(p, "achievement_stat_use_item_19", "Hit mobs " + value + " times.");
+					Utils.achievement(p, "achievement_stat_use_item_19", "I really like swinging swords all day.");
 					break;
 				case 250:
-					Utils.achievement(p, "achievement_stat_use_item_20", "Hit mobs " + value + " times.");
+					Utils.achievement(p, "achievement_stat_use_item_20", "Swinged a sword " + value + " times.");
 					break;
 				case 500:
-					Utils.achievement(p, "achievement_stat_use_item_21", "Hit mobs " + value + " times.");
+					Utils.achievement(p, "achievement_stat_use_item_21", "Swinged a sword " + value + " times.");
 					break;
 				case 1000:
-					Utils.achievement(p, "achievement_stat_use_item_22", "Hit mobs " + value + " times.");
+					Utils.achievement(p, "achievement_stat_use_item_22", "Swinged a sword " + value + " times.");
 					break;
 				case 10000:
-					Utils.achievement(p, "achievement_stat_use_item_23", "Hit mobs " + value + " times.");
+					Utils.achievement(p, "achievement_stat_use_item_23", "Swinged a sword " + value + " times.");
 					break;
 				}
 			}

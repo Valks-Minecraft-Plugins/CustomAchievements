@@ -6,7 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
 import com.customachievements.utils.Utils;
-import com.valkutils.modules.BlockModule;
+import com.valkcore.modules.BlockModule;
 
 public class AchievementsBlock implements Listener {
 	@EventHandler

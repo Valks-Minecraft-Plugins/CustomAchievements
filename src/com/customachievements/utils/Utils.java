@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 import com.customachievements.CustomAchievements;
 import com.customachievements.configs.PlayerFiles;
-import com.valkcore.color.Color;
+import com.valkcore.modules.TextModule;
 
 public class Utils {
 	public static void achievement(Player p, String achievement, String message) {
@@ -17,7 +17,7 @@ public class Utils {
 			cm.saveConfig();
 			
 			p.sendTitle("", message, 20, 60, 20);
-			CustomAchievements.plugin.getServer().broadcastMessage(Color.convertToColor("&q" + p.getPlayer().getName() + " &wjust achieved &q" + message));
+			CustomAchievements.plugin.getServer().broadcastMessage(TextModule.color("&q" + p.getPlayer().getName() + " &wjust achieved &q" + message));
 		}
 	}
 }
